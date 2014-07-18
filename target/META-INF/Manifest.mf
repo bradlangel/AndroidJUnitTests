@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Created-By: Ply
+Specification-Title: AndroidJUnitTests
+Specification-Version: 1.0
+Implementation-Title: AndroidJUnitTests
+Implementation-Version: 1.0
+
