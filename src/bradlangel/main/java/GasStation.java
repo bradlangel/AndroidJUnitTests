@@ -1,43 +1,26 @@
+
 package bradlangel.main.java;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import java.util.HashMap;
+import java.util.Map;
 
-/**
- * Created by bradlangel on 7/17/14.
- */
 public class GasStation {
 
-
-    @SerializedName("@class")
-    @Expose
     private String _class;
-    @Expose
     private String id;
-    @Expose
     private int dateTime;
-    @Expose
     private String zip;
-    @Expose
     private String imageUrl;
-    @Expose
     private String name;
-    @Expose
     private String longName;
-    @Expose
     private String address;
-    @Expose
     private Location location;
-    @Expose
     private double regular;
-    @Expose
     private double plus;
-    @Expose
     private double premium;
-    @Expose
     private double distance;
-    @Expose
     private double diesel;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getClass_() {
         return _class;
@@ -151,6 +134,12 @@ public class GasStation {
         this.diesel = diesel;
     }
 
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
 
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
 
 }
