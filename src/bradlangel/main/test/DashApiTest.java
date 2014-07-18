@@ -1,4 +1,8 @@
-package java;
+package bradlangel.main.test;
+
+import bradlangel.GasStation;
+import org.junit.Test;
+import retrofit.RestAdapter;
 
 import java.util.List;
 
