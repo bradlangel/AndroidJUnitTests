@@ -9,7 +9,7 @@ public class Location {
 
     private String _class;
     private String id;
-    private int dateTime;
+    private long dateTime;
     private double latitude;
     private double longitude;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
@@ -30,7 +30,7 @@ public class Location {
         this.id = id;
     }
 
-    public int getDateTime() {
+    public long getDateTime() {
         return dateTime;
     }
 

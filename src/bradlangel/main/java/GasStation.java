@@ -8,7 +8,7 @@ public class GasStation {
 
     private String _class;
     private String id;
-    private int dateTime;
+    private long dateTime;
     private String zip;
     private String imageUrl;
     private String name;
@@ -38,7 +38,7 @@ public class GasStation {
         this.id = id;
     }
 
-    public int getDateTime() {
+    public long getDateTime() {
         return dateTime;
     }
 
