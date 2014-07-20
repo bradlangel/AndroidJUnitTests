@@ -22,13 +22,11 @@ public class DashApiTest {
     private final static String longitude = "-73.991809";
     private final static String sort = "regular";
     private final ApiCredentials apiCredentials = new ApiCredentials();
+    public String longname;
 
 
     @Test
     public void callToAPI() {
-
-
-
 
 
         RequestInterceptor requestInterceptor = new RequestInterceptor() {
@@ -50,24 +48,25 @@ public class DashApiTest {
 
 
         //Each call on the generated dashApiService makes an HTTP request to the remote web server.
-        dashApiServiceT.getGasStations(latitude,
+        List<GasStation> gasStations = dashApiServiceT.listGasStations(latitude,
                 longitude,
-                sort,
-                new Callback<List<GasStation>>() {
-                    @Override
-                    public void success(List<GasStation> gasStations, Response response) {
-                        String gasLocationT = gasStations.get(0).getLongName();
-                        System.out.print(gasLocationT);
-                        Assert.assertTrue(gasLocationT.equals("Brooklyn Hess"));
-                    }
-
-                    @Override
-                    public void failure(RetrofitError retrofitError) {
-
-                    }
-                });
+                sort);
 
 
 
+        Assert.assertTrue(gasStations.get(0).getLongName().equals("Brooklyn Hess"));
+
+
+
+    }
+
+
+    public void consumeApiData(List<GasStation> gasStations) {
+            if(gasStations == null) {
+                throw new ExceptionInInitializerError();
+            } else {
+                String gasLocation = gasStations.get(0).getLongName();
+                Assert.assertTrue(gasLocation.equals("Brooklyn Hess"));
+            }
     }
 }
