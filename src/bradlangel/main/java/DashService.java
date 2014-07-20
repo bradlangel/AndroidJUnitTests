@@ -14,9 +14,14 @@ public interface DashService {
 
 
     @GET("/gas/price/latlng/{latitude}/{longitude}/{sort}")
-    void getGasStations(@Path("latitude") String latitude,
+        void getGasStations(@Path("latitude") String latitude,
                                      @Path("longitude") String longitude,
                                      @Path("sort") String sort,
                                      Callback<List<GasStation>> callback);
+
+    @GET("/gas/price/latlng/{latitude}/{longitude}/{sort}")
+    List<GasStation> listGasStations(@Path("latitude") String latitude,
+                        @Path("longitude") String longitude,
+                        @Path("sort") String sort);
 }
 
